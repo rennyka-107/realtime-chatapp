@@ -16,7 +16,7 @@ const SignInComponent = ({ providers }: Props) => {
             onClick={() => {
               try {
                 signIn(provider.name.toLowerCase(), {
-                  callbackUrl: "http://localhost:5000/chat-room",
+                  callbackUrl: process.env.NEXTAUTH_URL || "http://localhost:5000/chat-room",
                 });
               } catch (err) {
                 console.log(err, "error from login");
