@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const ioClient = io();
+const ioClient = io(process.env.NEXTAUTH_URL ?? '');
 
 // Handle on server
 
